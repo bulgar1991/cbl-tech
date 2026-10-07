@@ -1,0 +1,5 @@
+node_modules/
+frontend/dist/
+frontend/.angular/
+.vercel/
+*.log
