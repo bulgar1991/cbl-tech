@@ -4,9 +4,27 @@
   --rain-3: theme('colors.indigo');
   --rain-4: theme('colors.azure');
 
-  @apply pointer-events-none fixed inset-0 -z-10 block opacity-70;
+  @apply pointer-events-none fixed inset-0 -z-10 block overflow-hidden opacity-70;
 }
 
-canvas {
-  @apply h-full w-full;
+.drop {
+  position: absolute;
+  top: 0;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, transparent, var(--drop-color));
+  transform: translate3d(0, -10vh, 0);
+  animation: fall linear infinite;
+  will-change: transform;
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(0, 110vh, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host {
+    display: none;
+  }
 }
