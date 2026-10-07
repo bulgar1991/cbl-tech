@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  NgZone,
   OnDestroy,
   inject,
   input,
@@ -39,7 +38,6 @@ interface Splash {
   template: '<canvas #canvas aria-hidden="true"></canvas>',
 })
 export class RainComponent implements AfterViewInit, OnDestroy {
-  private zone = inject(NgZone);
   private host = inject<ElementRef<HTMLElement>>(ElementRef);
   private canvas = viewChild.required<ElementRef<HTMLCanvasElement>>('canvas');
 
@@ -65,8 +63,7 @@ export class RainComponent implements AfterViewInit, OnDestroy {
     this.ctx = this.canvas().nativeElement.getContext('2d')!;
     this.resize();
     window.addEventListener('resize', this.onResize);
-    // Animate outside Angular so every frame doesn't trigger change detection.
-    this.zone.runOutsideAngular(() => this.loop());
+    this.loop();
   }
 
   ngOnDestroy(): void {
