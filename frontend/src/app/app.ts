@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CursorGlowComponent } from '@components/cursor-glow/cursor-glow.component';
-import { HeaderComponent } from '@components/header/header.component';
-import { RainComponent } from '@components/rain/rain.component';
 
 @Component({
-  imports: [CursorGlowComponent, HeaderComponent, RainComponent, RouterOutlet],
+  imports: [RouterOutlet],
   selector: 'app-root',
+  styleUrl: './app.scss',
   templateUrl: './app.html',
 })
-export class App {}
+export class App {
+  protected readonly title = signal('frontend');
+}
