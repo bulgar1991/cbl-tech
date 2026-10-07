@@ -1,0 +1,45 @@
+:host {
+  @apply block;
+}
+
+.contact-section {
+  @apply py-24;
+
+  &__header {
+    @apply mb-14 flex flex-col items-center text-center;
+  }
+
+  &__title {
+    @apply w-fit font-display text-4xl font-bold md:text-5xl;
+  }
+
+  &__intro {
+    @apply mt-4 max-w-xl text-ink-muted;
+  }
+
+  // Form wider than the image column; stacked on smaller screens.
+  &__grid {
+    @apply grid items-center gap-12 lg:grid-cols-[3fr_2fr];
+  }
+
+  &__aside {
+    @apply flex flex-col items-center text-center;
+  }
+
+  // Gentle float (transform only).
+  &__image {
+    @apply h-auto w-full max-w-sm animate-float;
+  }
+
+  &__aside-title {
+    @apply mt-6 font-display text-2xl font-bold;
+  }
+
+  &__email {
+    @apply mt-5 text-sm text-ink-muted;
+  }
+
+  &__aside-text {
+    @apply mb-6 mt-2 text-ink-muted;
+  }
+}

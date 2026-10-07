@@ -1,0 +1,33 @@
+<section class="relative overflow-hidden px-4 pb-16 pt-36 text-center" data-testid="page-header">
+  <div class="blob left-[15%] top-[10%] text-primary"></div>
+  <div class="blob right-[15%] top-[30%] text-violet [animation-delay:-6s]"></div>
+
+  <div class="relative z-10 mx-auto max-w-3xl">
+    <nav class="text-sm text-ink-subtle" aria-label="Breadcrumb">
+      <ol class="flex flex-wrap justify-center gap-2">
+        <li><a class="link-underline hover:text-white" routerLink="/">Home</a></li>
+        @if (parent(); as parent) {
+          <li aria-hidden="true">/</li>
+          <li>
+            <a class="link-underline hover:text-white" [routerLink]="parent.link">
+              {{ parent.label }}
+            </a>
+          </li>
+        }
+        <li aria-hidden="true">/</li>
+        <li class="text-ink-muted" aria-current="page">{{ title() }}</li>
+      </ol>
+    </nav>
+
+    <h1 class="text-gradient mt-6 animate-fade-up font-display text-4xl font-bold md:text-6xl">
+      {{ title() }}
+    </h1>
+    @if (subtitle(); as subtitle) {
+      <p
+        class="mx-auto mt-4 max-w-xl animate-fade-up text-lg text-ink-muted [animation-delay:150ms]"
+      >
+        {{ subtitle }}
+      </p>
+    }
+  </div>
+</section>

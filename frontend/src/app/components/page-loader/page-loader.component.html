@@ -1,0 +1,11 @@
+<div
+  class="page-loader"
+  [class.page-loader--hidden]="!visible()"
+  role="status"
+  [attr.aria-hidden]="!visible()"
+  data-testid="page-loader"
+>
+  <span class="page-loader__logo text-gradient">{{ siteName }}</span>
+  <span class="page-loader__spinner" aria-hidden="true"></span>
+  <span class="sr-only">Loading…</span>
+</div>

@@ -1,0 +1,70 @@
+:host {
+  @apply block;
+}
+
+.services-section {
+  @apply py-24;
+
+  &__header {
+    @apply mb-14 flex flex-col items-center text-center;
+  }
+
+  &__title {
+    @apply w-fit font-display text-4xl font-bold md:text-5xl;
+  }
+
+  &__intro {
+    @apply mt-4 max-w-xl text-ink-muted;
+  }
+
+  // Stacked on phones (image first), side by side from md.
+  &__grid {
+    @apply grid items-center gap-12 md:grid-cols-2;
+  }
+
+  &__list {
+    @apply order-2 grid gap-4 md:order-1;
+  }
+
+  &__item {
+    @apply flex items-center gap-5 rounded-2xl border border-border bg-surface/90 p-5 no-underline;
+    @apply transition-[transform,border-color] duration-300 ease-out;
+
+    &:hover {
+      @apply translate-x-2 border-azure/60;
+
+      .services-section__item-title {
+        @apply text-azure;
+      }
+
+      .services-section__arrow {
+        @apply translate-x-1 opacity-100;
+      }
+    }
+  }
+
+  &__icon {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-primary text-xl shadow-glow;
+  }
+
+  &__item-title {
+    @apply block font-display text-lg font-semibold text-ink transition-colors duration-300;
+  }
+
+  &__item-text {
+    @apply mt-1 block text-sm text-ink-muted;
+  }
+
+  &__arrow {
+    @apply text-xl text-azure opacity-40 transition-[transform,opacity] duration-300;
+  }
+
+  &__media {
+    @apply order-1 flex justify-center md:order-2;
+  }
+
+  // Gentle float (transform only).
+  &__image {
+    @apply h-auto w-full max-w-md animate-float;
+  }
+}

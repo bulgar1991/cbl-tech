@@ -1,29 +1,32 @@
 <header
+  data-testid="site-header"
   class="fixed inset-x-0 top-0 z-50 transition-all duration-500"
-  [class.bg-background/70]="scrolled()"
-  [class.backdrop-blur-lg]="scrolled()"
+  [class.bg-background/90]="scrolled()"
   [class.shadow-glow]="scrolled()"
 >
   <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
     <a
       class="text-gradient font-display text-2xl font-bold transition-transform hover:scale-110"
-      href="#"
+      routerLink="/"
     >
-      CBL Tech
+      {{ siteName }}
     </a>
 
     <ul class="hidden items-center gap-8 md:flex">
-      @for (link of links; track link.href) {
+      @for (link of links; track link.id) {
         <li>
           <a
             class="link-underline text-ink-muted transition-colors hover:text-white"
-            [href]="link.href"
+            routerLinkActive="!text-white"
+            [routerLinkActiveOptions]="{ exact: link.link === '/' }"
+            [routerLink]="link.link"
+            [attr.data-testid]="'nav-link-' + link.id"
           >
             {{ link.label }}
           </a>
         </li>
       }
-      <li><a class="btn btn-primary px-5 py-2 text-sm" href="#contact">Get started</a></li>
+      <li><a class="btn btn-primary px-5 py-2 text-sm" routerLink="/contact">Get started</a></li>
     </ul>
 
     <button
@@ -51,14 +54,14 @@
   </nav>
 
   @if (menuOpen()) {
-    <ul
-      class="animate-fade-in border-t border-border bg-background/95 px-4 py-6 backdrop-blur-lg md:hidden"
-    >
-      @for (link of links; track link.href) {
+    <ul class="animate-fade-in border-t border-border bg-background px-4 py-6 md:hidden">
+      @for (link of links; track link.id) {
         <li>
           <a
             class="block py-3 text-lg text-ink-muted hover:text-white"
-            [href]="link.href"
+            routerLinkActive="!text-white"
+            [routerLinkActiveOptions]="{ exact: link.link === '/' }"
+            [routerLink]="link.link"
             (click)="menuOpen.set(false)"
           >
             {{ link.label }}
