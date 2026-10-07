@@ -28,7 +28,7 @@ describe('HeaderComponent mobile sidebar', () => {
   it('should show the logo in the header and in the sidebar', () => {
     const { el, click } = setup();
     expect(el.querySelector('[data-testid="header-logo"] img')?.getAttribute('src')).toBe(
-      'assets/images/header/site-logo-light.svg',
+      'assets/images/header/site-logo.svg',
     );
 
     click('mobile-menu-open');

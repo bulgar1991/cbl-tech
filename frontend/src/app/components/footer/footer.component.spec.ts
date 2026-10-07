@@ -51,7 +51,7 @@ describe('FooterComponent', () => {
 
     expect(logo?.getAttribute('href')).toBe('/');
     expect(logo?.querySelector('img')?.getAttribute('src')).toBe(
-      'assets/images/header/site-logo-light.svg',
+      'assets/images/header/site-logo.svg',
     );
     expect(logo?.querySelector('img')?.getAttribute('alt')).toBe('CBL Tech');
   });

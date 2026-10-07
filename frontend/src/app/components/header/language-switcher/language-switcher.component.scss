@@ -39,7 +39,7 @@
 
   &__option {
     @apply flex w-full cursor-pointer items-center gap-3 rounded-lg border-none bg-transparent px-3 py-2.5 text-left text-ink-muted;
-    @apply hover:bg-surface-light hover:text-white;
+    @apply hover:bg-surface-light hover:text-ink;
 
     &--active {
       @apply font-semibold text-azure;
