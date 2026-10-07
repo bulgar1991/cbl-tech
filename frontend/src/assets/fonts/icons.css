@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.woff2?193fdeaedf806d5443535eb977494366") format("woff2"),
+url("./icons.woff?193fdeaedf806d5443535eb977494366") format("woff");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xmark-solid-full:before {
+    content: "\f101";
+}
+.icon-whatsapp-brands-solid-full:before {
+    content: "\f102";
+}
+.icon-users-solid-full:before {
+    content: "\f103";
+}
+.icon-shield-solid-full:before {
+    content: "\f104";
+}
+.icon-phone-solid-full:before {
+    content: "\f105";
+}
+.icon-paper-plane-solid-full:before {
+    content: "\f106";
+}
+.icon-instagram-brands-solid-full:before {
+    content: "\f107";
+}
+.icon-facebook-f-brands-solid-full:before {
+    content: "\f108";
+}
+.icon-envelope-solid-full:before {
+    content: "\f109";
+}
+.icon-clock-regular-full:before {
+    content: "\f10a";
+}
+.icon-circle-exclamation-solid-full:before {
+    content: "\f10b";
+}
+.icon-circle-check-solid-full:before {
+    content: "\f10c";
+}
+.icon-check-solid-full:before {
+    content: "\f10d";
+}
+.icon-calendar-days-regular-full:before {
+    content: "\f10e";
+}
+.icon-arrow-up-solid-full:before {
+    content: "\f10f";
+}
+.icon-arrow-right-solid-full:before {
+    content: "\f110";
+}
+.icon-angle-up-solid-full:before {
+    content: "\f111";
+}
+.icon-angle-right-solid-full:before {
+    content: "\f112";
+}
+.icon-angle-left-solid-full:before {
+    content: "\f113";
+}
+.icon-angle-down-solid-full:before {
+    content: "\f114";
+}

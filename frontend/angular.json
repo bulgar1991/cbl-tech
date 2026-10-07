@@ -12,6 +12,7 @@
   "projects": {
     "frontend": {
       "projectType": "application",
+
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
@@ -54,20 +55,27 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/site.webmanifest", "src/robots.txt", "src/sitemap.xml", "src/assets"],
             "preserveSymlinks": true,
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "node_modules/swiper/swiper.css",
+              "node_modules/swiper/modules/navigation.css",
+              "node_modules/swiper/modules/pagination.css",
+              "node_modules/swiper/modules/effect-fade.css",
+              "src/styles.scss",
+              "src/assets/fonts/icons.css"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "4mb"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "20kb",
-                  "maximumError": "40kb"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -94,12 +102,6 @@
             "host": "0.0.0.0"
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n",
-          "options": {
-            "buildTarget": "frontend:build"
-          }
         },
         "test": {
           "builder": "@angular/build:unit-test",
