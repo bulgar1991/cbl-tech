@@ -1,0 +1,94 @@
+<footer class="site-footer" data-testid="site-footer">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="site-footer__grid">
+      <!-- About -->
+      <div>
+        <a class="site-footer__logo text-gradient" routerLink="/" data-testid="footer-logo">
+          {{ siteName }}
+        </a>
+        <p class="site-footer__description">
+          We build fast, beautiful and modern digital products — websites, web apps and mobile apps.
+        </p>
+        <a class="site-footer__cta link-underline" routerLink="/contact">Start a project →</a>
+      </div>
+
+      <!-- Quick links -->
+      <nav aria-label="Quick links">
+        <h2 class="site-footer__heading">Quick links</h2>
+        <ul class="site-footer__links">
+          @for (item of menuItems; track item.id) {
+            <li>
+              <a [routerLink]="item.link" [attr.data-testid]="'footer-nav-link-' + item.id">
+                {{ item.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <!-- Services -->
+      <nav aria-label="Services">
+        <h2 class="site-footer__heading">Services</h2>
+        <ul class="site-footer__links">
+          @for (service of services; track service.id) {
+            <li>
+              <a
+                [routerLink]="['/services', service.id]"
+                [attr.data-testid]="'footer-service-link-' + service.id"
+              >
+                {{ service.title }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <!-- Contact -->
+      <div>
+        <h2 class="site-footer__heading">Contact</h2>
+        <address class="site-footer__contact">
+          <a [href]="phoneHref" data-testid="footer-phone">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"
+              />
+            </svg>
+            {{ phone }}
+          </a>
+          <a [href]="emailHref" data-testid="footer-email">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.5l8 5 8-5V6H4zm16 2.85-7.47 4.67a1 1 0 0 1-1.06 0L4 8.85V18h16V8.85z"
+              />
+            </svg>
+            {{ email }}
+          </a>
+          <a routerLink="/contact" data-testid="footer-contact-form">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8l-4 3.5A.6.6 0 0 1 3 21V5a2 2 0 0 1 1-2zm1 2v13.6L7.3 16H20V5H5zm3 4h8v2H8V9zm0-3h8v2H8V6z"
+              />
+            </svg>
+            Send us a message
+          </a>
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <div class="site-footer__bottom-inner mx-auto max-w-6xl px-4">
+      <p data-testid="footer-copyright">© {{ year }} {{ siteName }}. All rights reserved.</p>
+      <button
+        type="button"
+        class="site-footer__to-top"
+        aria-label="Back to top"
+        title="Back to top"
+        data-testid="footer-back-to-top"
+        (click)="scrollToTop()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" /></svg>
+      </button>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,80 @@
+:host {
+  @apply block;
+}
+
+// A thin gradient line on top ties the footer to the brand colors.
+.site-footer {
+  @apply relative bg-surface/95 text-[0.95rem] text-ink-muted;
+
+  &::before {
+    content: '';
+    @apply absolute inset-x-0 top-0 h-px bg-gradient-primary;
+  }
+
+  &__grid {
+    @apply grid gap-10 pb-12 pt-16 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.2fr_1.3fr] lg:gap-12;
+  }
+
+  &__logo {
+    @apply inline-block font-display text-2xl font-bold no-underline;
+  }
+
+  &__description {
+    @apply mb-5 mt-4 max-w-xs leading-relaxed;
+  }
+
+  &__cta {
+    @apply font-semibold text-azure no-underline;
+  }
+
+  // Column heading with a short gradient underline.
+  &__heading {
+    @apply relative mb-6 pb-3 font-display text-lg font-semibold text-ink;
+
+    &::after {
+      content: '';
+      @apply absolute bottom-0 left-0 h-0.5 w-8 rounded-sm bg-gradient-primary;
+    }
+  }
+
+  &__links {
+    @apply grid gap-3;
+
+    a {
+      @apply inline-block text-ink-muted no-underline transition-[color,transform] duration-200;
+      @apply hover:translate-x-1 hover:text-white;
+    }
+  }
+
+  &__contact {
+    @apply grid gap-4 not-italic;
+
+    a {
+      @apply flex items-center gap-3 break-words text-ink-muted no-underline transition-colors duration-200 hover:text-white;
+    }
+
+    svg {
+      @apply h-5 w-5 shrink-0 text-azure;
+    }
+  }
+
+  &__bottom {
+    @apply border-t border-border text-sm text-ink-subtle;
+  }
+
+  &__bottom-inner {
+    @apply flex items-center justify-between gap-4 py-5;
+  }
+
+  &__to-top {
+    @apply flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border-none bg-gradient-primary text-white shadow-glow transition-transform duration-200;
+    @apply hover:-translate-y-1;
+
+    svg {
+      @apply h-5 w-5 fill-none stroke-current;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+}

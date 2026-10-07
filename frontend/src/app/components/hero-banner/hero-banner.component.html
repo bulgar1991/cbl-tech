@@ -1,0 +1,26 @@
+<section class="relative flex min-h-screen items-center overflow-hidden" data-testid="hero-banner">
+  <div class="blob left-[10%] top-[15%] text-primary"></div>
+  <div class="blob right-[10%] top-[35%] text-violet [animation-delay:-4s]"></div>
+  <div class="blob bottom-[10%] left-[35%] text-azure [animation-delay:-8s]"></div>
+
+  <!-- Same width as the header, so the text lines up with the logo. -->
+  <div class="relative z-10 mx-auto w-full max-w-6xl px-4 text-left">
+    <h1
+      class="text-gradient w-fit max-w-4xl animate-fade-up font-display text-5xl font-bold leading-tight md:text-7xl"
+      data-testid="hero-title"
+    >
+      {{ title() }}
+    </h1>
+    <p
+      class="mt-6 max-w-2xl animate-fade-up text-lg text-ink-muted [animation-delay:150ms]"
+      data-testid="hero-description"
+    >
+      {{ description() }}
+    </p>
+    <div class="pulse-glow mt-10 animate-fade-up rounded-xl [animation-delay:300ms]">
+      <a class="btn btn-primary" [routerLink]="buttonLink()" appMagnetic data-testid="hero-cta">
+        {{ buttonLabel() }}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+// Full-screen loader. Global (not in the component .scss) because index.html shows the same
+// markup inside <app-root> before Angular boots, when no component styles exist yet.
+.page-loader {
+  @apply fixed inset-0 z-[1000] flex flex-col items-center justify-center gap-6 bg-background opacity-100 transition-[opacity,visibility] duration-300;
+
+  &--hidden {
+    @apply pointer-events-none invisible opacity-0;
+  }
+
+  &__logo {
+    @apply font-display text-4xl font-bold;
+  }
+
+  &__spinner {
+    @apply h-10 w-10 animate-spin rounded-full border-4 border-border border-t-azure;
+  }
+}

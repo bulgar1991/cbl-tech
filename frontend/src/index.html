@@ -6,7 +6,10 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="CBL Tech" />
+    <meta
+      name="description"
+      content="We build fast, beautiful and modern digital products — with a touch of neon."
+    />
     <link href="favicon.ico" rel="icon" />
     <link href="site.webmanifest" rel="manifest" />
 
@@ -18,6 +21,13 @@
     />
   </head>
   <body>
-    <app-root></app-root>
+    <app-root>
+      <!-- Shown until Angular boots; <app-page-loader> then takes over with the same markup. -->
+      <div class="page-loader" role="status" data-testid="page-loader">
+        <span class="page-loader__logo text-gradient">CBL Tech</span>
+        <span class="page-loader__spinner" aria-hidden="true"></span>
+        <span class="sr-only">Loading…</span>
+      </div>
+    </app-root>
   </body>
 </html>

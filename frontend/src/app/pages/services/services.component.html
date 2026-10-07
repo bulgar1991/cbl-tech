@@ -1,0 +1,29 @@
+<app-page-header title="Services" subtitle="Everything you need to launch and grow online." />
+
+<section class="mx-auto max-w-6xl px-4 pb-24 pt-8">
+  <div class="grid gap-6 sm:grid-cols-2">
+    @for (service of services; track service.id; let i = $index) {
+      <div appReveal [revealDelay]="i * 100">
+        <a
+          class="card spotlight group block h-full no-underline"
+          appTilt
+          [routerLink]="['/services', service.id]"
+          [attr.data-testid]="'service-card-' + service.id"
+        >
+          <div
+            class="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-primary text-2xl shadow-glow transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110"
+          >
+            {{ service.icon }}
+          </div>
+          <h2
+            class="mt-5 font-display text-2xl font-semibold transition-colors group-hover:text-azure"
+          >
+            {{ service.title }}
+          </h2>
+          <p class="mt-2 text-ink-muted">{{ service.summary }}</p>
+          <span class="mt-4 inline-block text-sm font-semibold text-azure">Learn more →</span>
+        </a>
+      </div>
+    }
+  </div>
+</section>

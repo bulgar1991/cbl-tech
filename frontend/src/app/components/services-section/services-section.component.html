@@ -1,0 +1,50 @@
+<section
+  class="services-section"
+  aria-labelledby="services-section-title"
+  data-testid="services-section"
+>
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="services-section__header" appReveal>
+      <h2 id="services-section-title" class="services-section__title text-gradient">
+        Our Services
+      </h2>
+      <p class="services-section__intro">Everything you need to launch and grow online.</p>
+    </div>
+
+    <div class="services-section__grid">
+      <ul class="services-section__list">
+        @for (service of services; track service.id; let i = $index) {
+          <li appReveal [revealDelay]="i * 100">
+            <a
+              class="services-section__item group"
+              [routerLink]="['/services', service.id]"
+              [attr.data-testid]="'services-section-item-' + service.id"
+            >
+              <span class="services-section__icon">{{ service.icon }}</span>
+              <span class="flex-1">
+                <span class="services-section__item-title">{{ service.title }}</span>
+                <span class="services-section__item-text">{{ service.summary }}</span>
+              </span>
+              <span class="services-section__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        }
+        <li class="pt-4" appReveal [revealDelay]="services.length * 100">
+          <a class="btn btn-outline" routerLink="/services" appMagnetic>All services</a>
+        </li>
+      </ul>
+
+      <div class="services-section__media" appReveal [revealDelay]="200">
+        <img
+          class="services-section__image"
+          [src]="image"
+          alt="Laptop and phone showing code and app screens"
+          width="800"
+          height="800"
+          loading="lazy"
+          data-testid="services-section-image"
+        />
+      </div>
+    </div>
+  </div>
+</section>

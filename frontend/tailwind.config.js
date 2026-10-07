@@ -4,7 +4,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Arial', 'sans-serif'],
+        sans: [
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Arial',
+          'sans-serif',
+        ],
         display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
       },
       // The site palette. Use as classes (`bg-primary`, `text-azure`) in templates and as
@@ -61,9 +69,10 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-14px)' },
         },
+        // Opacity only - used on a pre-drawn shadow (see .pulse-glow in styles.scss).
         'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 16px rgba(0, 127, 255, 0.45)' },
-          '50%': { boxShadow: '0 0 40px rgba(170, 0, 255, 0.75)' },
+          '0%, 100%': { opacity: '0.35' },
+          '50%': { opacity: '1' },
         },
         shine: {
           from: { transform: 'translateX(-120%) skewX(-20deg)' },

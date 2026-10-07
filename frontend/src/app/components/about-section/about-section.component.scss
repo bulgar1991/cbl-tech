@@ -1,0 +1,116 @@
+:host {
+  @apply block;
+}
+
+.about-section {
+  @apply py-24;
+
+  &__header {
+    @apply mb-10 flex items-end justify-between gap-6;
+  }
+
+  &__eyebrow {
+    @apply mb-2 text-sm font-semibold uppercase tracking-[0.15em] text-azure;
+  }
+
+  &__title {
+    @apply w-fit font-display text-4xl font-bold md:text-5xl;
+  }
+
+  &__intro {
+    @apply mt-4 max-w-xl text-ink-muted;
+  }
+
+  &__arrows {
+    @apply hidden shrink-0 gap-3 sm:flex;
+  }
+
+  &__arrow {
+    @apply flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border border-border bg-surface/60 text-ink backdrop-blur-md transition-all duration-300;
+
+    svg {
+      @apply h-5 w-5 fill-none stroke-current;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    &:hover:not(.swiper-button-disabled) {
+      @apply border-azure shadow-glow;
+    }
+
+    // Swiper adds this class at the first/last slide.
+    &.swiper-button-disabled {
+      @apply cursor-default opacity-35;
+    }
+
+    // ...and this one when all slides already fit.
+    &.swiper-button-lock {
+      @apply hidden;
+    }
+  }
+
+  // Full width. Vertical room for the card shadow and the scaled-up center card.
+  &__swiper {
+    @apply w-full px-0 pb-10 pt-6;
+  }
+
+  // Side cards are smaller and dimmed by a dark overlay (not opacity, which would let the
+  // unblurred background show through); the centered (active) one stands out.
+  // Only transform and the overlay's opacity animate, so sliding stays smooth.
+  &__slide {
+    @apply relative h-auto scale-90 transition-transform duration-500 ease-out;
+
+    &::after {
+      content: '';
+      @apply pointer-events-none absolute inset-0 rounded-2xl bg-background/55 transition-opacity duration-500;
+    }
+
+    &.swiper-slide-active {
+      @apply scale-105;
+
+      &::after {
+        @apply opacity-0;
+      }
+
+      .about-section__card {
+        @apply border-azure/50 shadow-[0_12px_40px_rgba(0,0,0,0.5),0_0_40px_rgba(0,127,255,0.35)];
+      }
+    }
+  }
+
+  // Glass card: translucent background, backdrop blur and a soft colored shadow.
+  &__card {
+    @apply flex h-full flex-col rounded-2xl border border-white/10 bg-surface-light/40 p-7;
+    @apply shadow-[0_8px_32px_rgba(0,0,0,0.45),0_0_24px_rgba(42,0,255,0.25)] backdrop-blur-xl;
+    @apply transition-[border-color] duration-300 ease-out;
+
+    &:hover {
+      @apply border-azure/50;
+    }
+  }
+
+  &__icon {
+    @apply flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-primary text-2xl shadow-glow;
+  }
+
+  &__card-title {
+    @apply mt-5 font-display text-xl font-semibold;
+  }
+
+  &__card-text {
+    @apply mt-2 text-ink-muted;
+  }
+
+  &__dots {
+    @apply flex justify-center gap-2;
+  }
+
+  &__dot {
+    @apply h-2.5 w-2.5 cursor-pointer rounded-full border-none bg-ink-muted/30 p-0 transition-all duration-300;
+
+    &--active {
+      @apply w-8 bg-azure;
+    }
+  }
+}

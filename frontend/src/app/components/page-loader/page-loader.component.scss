@@ -1,0 +1,4 @@
+// The .page-loader styles are global (src/app/styles/_page-loader.scss), shared with index.html.
+:host {
+  @apply contents;
+}

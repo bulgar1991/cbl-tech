@@ -1,0 +1,50 @@
+<section
+  class="contact-section"
+  aria-labelledby="contact-section-title"
+  data-testid="contact-section"
+>
+  <div class="mx-auto max-w-6xl px-4">
+    @if (showTitle()) {
+      <div class="contact-section__header" appReveal>
+        <h2 id="contact-section-title" class="contact-section__title text-gradient">Contact</h2>
+        <p class="contact-section__intro">
+          Tell us about your project and we'll answer within a day.
+        </p>
+      </div>
+    }
+
+    <div class="contact-section__grid">
+      <div appReveal>
+        <app-contact-form />
+      </div>
+
+      <aside class="contact-section__aside" appReveal [revealDelay]="150">
+        <img
+          class="contact-section__image"
+          [src]="image"
+          alt="Envelope, chat bubbles and a phone"
+          width="800"
+          height="600"
+          loading="lazy"
+          data-testid="contact-section-image"
+        />
+        <h3 class="contact-section__aside-title">Prefer to talk?</h3>
+        <p class="contact-section__aside-text">Call us — we're happy to discuss your project.</p>
+        <a class="btn btn-primary" [href]="phoneHref" appMagnetic data-testid="contact-call">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"
+            />
+          </svg>
+          Call us · {{ phone }}
+        </a>
+        <p class="contact-section__email">
+          or write to
+          <a class="link-underline text-azure" [href]="emailHref" data-testid="contact-email">{{
+            email
+          }}</a>
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>

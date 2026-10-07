@@ -1,0 +1,10 @@
+// Focused by the skip link - no outline around the whole page.
+.site-main {
+  @apply block focus:outline-none;
+}
+
+// Only visible when reached with the keyboard.
+.skip-link {
+  @apply fixed left-3 top-3 z-[100] -translate-y-[200%] rounded-lg bg-primary px-5 py-3 font-semibold text-white no-underline transition-transform duration-200;
+  @apply focus:translate-y-0;
+}
