@@ -2,7 +2,6 @@ import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from '@angular/router';
 import { SeoService } from '@services/seo.service';
 import { findService } from '@/config/services';
-import { SITE_NAME } from '@/config/site';
 import { Service } from '@models/service.model';
 
 // Loads the service for /services/:id and sets its SEO tags. serviceExistsGuard has already
@@ -13,7 +12,11 @@ export const serviceSeoResolver: ResolveFn<Service> = (
 ): Service => {
   const service = findService(route.paramMap.get('id'))!;
   inject(SeoService).apply(
-    { title: `${service.title} — ${SITE_NAME}`, description: service.description },
+    {
+      title: 'seo.serviceDetail.title',
+      description: service.key + '.description',
+      params: { service: service.key + '.title' },
+    },
     state.url,
   );
   return service;

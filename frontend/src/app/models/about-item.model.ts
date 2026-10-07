@@ -1,5 +1,5 @@
 export interface AboutItem {
   icon: string;
-  title: string;
-  text: string;
+  // Translation key prefix -> '.title' and '.text' in assets/i18n/*.json.
+  key: string;
 }

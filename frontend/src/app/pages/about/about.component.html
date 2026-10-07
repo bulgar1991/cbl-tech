@@ -1,18 +1,20 @@
-<app-page-header title="About us" subtitle="A small team building fast, modern digital products." />
+<app-page-header
+  [title]="'pages.about.title' | translate"
+  [subtitle]="'pages.about.subtitle' | translate"
+/>
 
 <section class="mx-auto max-w-3xl px-4 py-16 text-center">
   <p class="text-lg leading-relaxed text-ink-muted" appReveal>
-    CBL Tech designs and builds websites, web apps and mobile apps. We combine clean engineering
-    with bold visuals, so your product is quick, reliable and memorable.
+    {{ 'pages.about.intro' | translate }}
   </p>
 </section>
 
 <section class="mx-auto max-w-6xl px-4 py-16">
   <h2 class="text-gradient text-center font-display text-4xl font-bold md:text-5xl" appReveal>
-    What we value
+    {{ 'pages.about.valuesTitle' | translate }}
   </h2>
   <div class="mt-14 grid gap-6 md:grid-cols-3">
-    @for (value of values; track value.title; let i = $index) {
+    @for (value of values; track value.key; let i = $index) {
       <div appReveal [revealDelay]="i * 100">
         <article class="card spotlight group h-full" appTilt>
           <div
@@ -23,9 +25,9 @@
           <h3
             class="mt-5 font-display text-xl font-semibold transition-colors group-hover:text-azure"
           >
-            {{ value.title }}
+            {{ value.key + '.title' | translate }}
           </h3>
-          <p class="mt-2 text-ink-muted">{{ value.text }}</p>
+          <p class="mt-2 text-ink-muted">{{ value.key + '.text' | translate }}</p>
         </article>
       </div>
     }
@@ -33,6 +35,10 @@
 </section>
 
 <section class="px-4 py-24 text-center" appReveal>
-  <h2 class="font-display text-3xl font-bold md:text-4xl">Have a project in mind?</h2>
-  <a class="btn btn-primary mt-8" routerLink="/contact" appMagnetic>Talk to us</a>
+  <h2 class="font-display text-3xl font-bold md:text-4xl">
+    {{ 'pages.about.ctaTitle' | translate }}
+  </h2>
+  <a class="btn btn-primary mt-8" routerLink="/contact" appMagnetic>{{
+    'pages.about.ctaButton' | translate
+  }}</a>
 </section>

@@ -16,7 +16,11 @@
   }
 
   &__logo {
-    @apply inline-block font-display text-2xl font-bold no-underline;
+    @apply inline-block;
+  }
+
+  &__logo-img {
+    @apply block h-16 w-auto;
   }
 
   &__description {

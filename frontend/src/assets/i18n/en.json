@@ -1,0 +1,232 @@
+{
+  "header": {
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "getStarted": "Get started",
+    "language": "Language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainMenu": "Main menu",
+    "skipToContent": "Skip to content"
+  },
+  "loader": {
+    "loading": "Loading…"
+  },
+  "home": {
+    "hero": {
+      "title": "CBL Tech",
+      "description": "We build fast, beautiful and modern digital products — with a touch of neon.",
+      "button": "Get started"
+    }
+  },
+  "aboutSection": {
+    "eyebrow": "About us",
+    "title": "Built by people who care",
+    "intro": "We design and build digital products with clean engineering and bold visuals.",
+    "more": "More about us",
+    "prev": "Previous",
+    "next": "Next",
+    "items": {
+      "who": {
+        "title": "Who we are",
+        "text": "A small team of developers and designers who love building fast, modern products."
+      },
+      "mission": {
+        "title": "Our mission",
+        "text": "Help businesses grow online with websites and apps that are quick, clear and reliable."
+      },
+      "how": {
+        "title": "How we work",
+        "text": "Short iterations, regular demos and clear prices — you always know where the project is."
+      },
+      "tech": {
+        "title": "Our technology",
+        "text": "Angular, TypeScript and modern cloud hosting, chosen to last and easy to maintain."
+      },
+      "partnership": {
+        "title": "Partnership",
+        "text": "We stay after launch with updates, monitoring and new features as you grow."
+      }
+    }
+  },
+  "servicesSection": {
+    "title": "Our Services",
+    "intro": "Everything you need to launch and grow online.",
+    "all": "All services",
+    "imageAlt": "Laptop and phone showing code and app screens"
+  },
+  "services": {
+    "learnMore": "Learn more →",
+    "included": "What's included",
+    "startProject": "Start a project",
+    "all": "All services",
+    "items": {
+      "web-development": {
+        "title": "Web development",
+        "summary": "Fast, modern websites and web apps built with Angular.",
+        "description": "From landing pages to full web applications, we build sites that load fast, rank well and are easy to grow.",
+        "points": [
+          "Angular single-page applications",
+          "Responsive design for every screen",
+          "SEO-friendly structure and metadata",
+          "Hosting and deployment on Vercel"
+        ]
+      },
+      "ui-ux-design": {
+        "title": "UI / UX design",
+        "summary": "Interfaces that look sharp and are easy to use.",
+        "description": "We design clear, accessible interfaces with a strong visual identity, from wireframes to the final pixel.",
+        "points": [
+          "Wireframes and interactive prototypes",
+          "Design systems and component libraries",
+          "Accessibility (WCAG) reviews",
+          "Animations and micro-interactions"
+        ]
+      },
+      "mobile-apps": {
+        "title": "Mobile apps",
+        "summary": "Apps for iOS and Android from a single codebase.",
+        "description": "We turn your idea into a mobile app that works offline, sends notifications and feels native on every phone.",
+        "points": [
+          "Progressive web apps (PWA)",
+          "Cross-platform iOS and Android apps",
+          "Push notifications and offline mode",
+          "App store publishing"
+        ]
+      },
+      "support-maintenance": {
+        "title": "Support & maintenance",
+        "summary": "Updates, monitoring and fixes so your product keeps running.",
+        "description": "We keep your site or app secure and up to date, and we are there when something needs fixing.",
+        "points": [
+          "Framework and dependency updates",
+          "Uptime and error monitoring",
+          "Security patches",
+          "Small changes and new features"
+        ]
+      }
+    }
+  },
+  "contactSection": {
+    "title": "Contact",
+    "intro": "Tell us about your project and we'll answer within a day.",
+    "imageAlt": "Envelope, chat bubbles and a phone",
+    "asideTitle": "Prefer to talk?",
+    "asideText": "Call us — we're happy to discuss your project.",
+    "call": "Call us",
+    "orWrite": "or write to"
+  },
+  "contactForm": {
+    "labels": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "company": "Company name",
+      "jobTitle": "Job title",
+      "email": "Email",
+      "phone": "Mobile phone number",
+      "project": "Project details"
+    },
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "company": "Acme Inc.",
+      "jobTitle": "Product manager",
+      "email": "john@example.com",
+      "phone": "+41 79 123 45 67",
+      "project": "Goals, timeline, budget, links… anything useful about your project."
+    },
+    "errors": {
+      "firstName": "Please enter your first name.",
+      "lastName": "Please enter your last name.",
+      "email": "Please enter a valid email.",
+      "phone": "Please enter a valid phone number.",
+      "project": "Please write at least 10 characters."
+    },
+    "submit": "Submit",
+    "sending": "Sending…",
+    "error": "Something went wrong, please try again.",
+    "success": {
+      "title": "Message sent!",
+      "text": "Thanks, we will get back to you soon.",
+      "again": "Send another"
+    }
+  },
+  "footer": {
+    "description": "We build fast, beautiful and modern digital products — websites, web apps and mobile apps.",
+    "cta": "Start a project →",
+    "quickLinks": "Quick links",
+    "services": "Services",
+    "contact": "Contact",
+    "sendMessage": "Send us a message",
+    "rights": "All rights reserved.",
+    "backToTop": "Back to top"
+  },
+  "pages": {
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "about": {
+      "title": "About us",
+      "subtitle": "A small team building fast, modern digital products.",
+      "intro": "CBL Tech designs and builds websites, web apps and mobile apps. We combine clean engineering with bold visuals, so your product is quick, reliable and memorable.",
+      "valuesTitle": "What we value",
+      "values": {
+        "focused": {
+          "title": "Focused",
+          "text": "We take on a few projects at a time and give each one our full attention."
+        },
+        "transparent": {
+          "title": "Transparent",
+          "text": "Clear prices, regular updates and code that belongs to you."
+        },
+        "detail": {
+          "title": "Detail-driven",
+          "text": "Performance, accessibility and polish are part of every build, not extras."
+        }
+      },
+      "ctaTitle": "Have a project in mind?",
+      "ctaButton": "Talk to us"
+    },
+    "services": {
+      "title": "Services",
+      "subtitle": "Everything you need to launch and grow online."
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Tell us about your project and we'll answer within a day."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "text": "The page you're looking for doesn't exist or has moved.",
+      "back": "Back to home"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "CBL Tech",
+      "description": "We build fast, beautiful and modern digital products — with a touch of neon."
+    },
+    "about": {
+      "title": "About us — CBL Tech",
+      "description": "A small team building fast, modern websites, web apps and mobile apps."
+    },
+    "services": {
+      "title": "Services — CBL Tech",
+      "description": "Web development, UI/UX design, mobile apps, support and maintenance."
+    },
+    "serviceDetail": {
+      "title": "{{service}} — CBL Tech"
+    },
+    "contact": {
+      "title": "Contact — CBL Tech",
+      "description": "Tell us about your project and we'll answer within a day."
+    },
+    "notFound": {
+      "title": "Page not found — CBL Tech",
+      "description": "The page you're looking for doesn't exist or has moved."
+    }
+  }
+}

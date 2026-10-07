@@ -3,9 +3,13 @@
   <div class="blob right-[15%] top-[30%] text-violet [animation-delay:-6s]"></div>
 
   <div class="relative z-10 mx-auto max-w-3xl">
-    <nav class="text-sm text-ink-subtle" aria-label="Breadcrumb">
+    <nav class="text-sm text-ink-subtle" [attr.aria-label]="'pages.breadcrumb' | translate">
       <ol class="flex flex-wrap justify-center gap-2">
-        <li><a class="link-underline hover:text-white" routerLink="/">Home</a></li>
+        <li>
+          <a class="link-underline hover:text-white" routerLink="/">{{
+            'pages.home' | translate
+          }}</a>
+        </li>
         @if (parent(); as parent) {
           <li aria-hidden="true">/</li>
           <li>

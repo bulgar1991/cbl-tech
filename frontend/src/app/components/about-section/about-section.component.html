@@ -2,20 +2,22 @@
   <div class="mx-auto max-w-6xl px-4">
     <div class="about-section__header" appReveal>
       <div>
-        <p class="about-section__eyebrow">About us</p>
+        <p class="about-section__eyebrow">{{ 'aboutSection.eyebrow' | translate }}</p>
         <h2 id="about-section-title" class="about-section__title text-gradient">
-          Built by people who care
+          {{ 'aboutSection.title' | translate }}
         </h2>
         <p class="about-section__intro">
-          We design and build digital products with clean engineering and bold visuals.
-          <a class="link-underline text-azure" routerLink="/about">More about us</a>
+          {{ 'aboutSection.intro' | translate }}
+          <a class="link-underline text-azure" routerLink="/about">{{
+            'aboutSection.more' | translate
+          }}</a>
         </p>
       </div>
       <div class="about-section__arrows">
         <button
           type="button"
           class="about-section__arrow about-section__arrow--prev"
-          aria-label="Previous"
+          [attr.aria-label]="'aboutSection.prev' | translate"
           data-testid="about-prev"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
@@ -23,7 +25,7 @@
         <button
           type="button"
           class="about-section__arrow about-section__arrow--next"
-          aria-label="Next"
+          [attr.aria-label]="'aboutSection.next' | translate"
           data-testid="about-next"
         >
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
@@ -39,8 +41,8 @@
         <div class="swiper-slide about-section__slide">
           <article class="about-section__card" data-testid="about-card">
             <div class="about-section__icon">{{ item.icon }}</div>
-            <h3 class="about-section__card-title">{{ item.title }}</h3>
-            <p class="about-section__card-text">{{ item.text }}</p>
+            <h3 class="about-section__card-title">{{ item.key + '.title' | translate }}</h3>
+            <p class="about-section__card-text">{{ item.key + '.text' | translate }}</p>
           </article>
         </div>
       }
@@ -48,12 +50,12 @@
   </div>
 
   <div class="about-section__dots">
-    @for (item of items; track item.title; let i = $index) {
+    @for (item of items; track item.key; let i = $index) {
       <button
         type="button"
         class="about-section__dot"
         [class.about-section__dot--active]="active() === i"
-        [attr.aria-label]="item.title"
+        [attr.aria-label]="item.key + '.title' | translate"
         [attr.aria-current]="active() === i"
         (click)="goTo(i)"
       ></button>

@@ -4,15 +4,12 @@
   [class.bg-background/90]="scrolled()"
   [class.shadow-glow]="scrolled()"
 >
-  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-    <a
-      class="text-gradient font-display text-2xl font-bold transition-transform hover:scale-110"
-      routerLink="/"
-    >
-      {{ siteName }}
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
+    <a class="site-logo" routerLink="/" data-testid="header-logo">
+      <img class="site-logo__img" [src]="logo" [alt]="siteName" width="634" height="300" />
     </a>
 
-    <ul class="hidden items-center gap-8 md:flex">
+    <ul class="hidden items-center gap-8 lg:flex">
       @for (link of links; track link.id) {
         <li>
           <a
@@ -22,52 +19,99 @@
             [routerLink]="link.link"
             [attr.data-testid]="'nav-link-' + link.id"
           >
-            {{ link.label }}
+            {{ link.labelKey | translate }}
           </a>
         </li>
       }
-      <li><a class="btn btn-primary px-5 py-2 text-sm" routerLink="/contact">Get started</a></li>
+      <li><app-language-switcher /></li>
+      <li>
+        <a class="btn btn-primary px-5 py-2 text-sm" routerLink="/contact">{{
+          'header.getStarted' | translate
+        }}</a>
+      </li>
     </ul>
 
     <button
-      class="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
       type="button"
-      aria-label="Menu"
-      [attr.aria-expanded]="menuOpen()"
-      (click)="menuOpen.set(!menuOpen())"
+      class="burger"
+      [attr.aria-label]="'header.openMenu' | translate"
+      [attr.aria-expanded]="sidebarOpen()"
+      aria-controls="mobile-sidebar"
+      data-testid="mobile-menu-open"
+      (click)="openSidebar()"
     >
-      <span
-        class="h-0.5 w-6 bg-white transition-transform duration-300"
-        [class.translate-y-2]="menuOpen()"
-        [class.rotate-45]="menuOpen()"
-      ></span>
-      <span
-        class="h-0.5 w-6 bg-white transition-opacity duration-300"
-        [class.opacity-0]="menuOpen()"
-      ></span>
-      <span
-        class="h-0.5 w-6 bg-white transition-transform duration-300"
-        [class.-translate-y-2]="menuOpen()"
-        [class.-rotate-45]="menuOpen()"
-      ></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </nav>
-
-  @if (menuOpen()) {
-    <ul class="animate-fade-in border-t border-border bg-background px-4 py-6 md:hidden">
-      @for (link of links; track link.id) {
-        <li>
-          <a
-            class="block py-3 text-lg text-ink-muted hover:text-white"
-            routerLinkActive="!text-white"
-            [routerLinkActiveOptions]="{ exact: link.link === '/' }"
-            [routerLink]="link.link"
-            (click)="menuOpen.set(false)"
-          >
-            {{ link.label }}
-          </a>
-        </li>
-      }
-    </ul>
-  }
 </header>
+
+<!-- Mobile sidebar (opened by the burger), outside <header> so it isn't inside its stacking box. -->
+@if (sidebarOpen()) {
+  <div class="sidebar-overlay" (click)="closeSidebar()" aria-hidden="true"></div>
+  <div
+    id="mobile-sidebar"
+    class="sidebar"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="'header.mainMenu' | translate"
+    data-testid="mobile-menu"
+  >
+    <div class="sidebar__header">
+      <a class="sidebar__logo" routerLink="/" (click)="closeSidebar()">
+        <img class="sidebar__logo-img" [src]="logo" [alt]="siteName" width="634" height="300" />
+      </a>
+      <button
+        type="button"
+        class="sidebar__close"
+        [attr.aria-label]="'header.closeMenu' | translate"
+        data-testid="mobile-menu-close"
+        (click)="closeSidebar()"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </div>
+
+    <nav
+      class="sidebar__nav"
+      [attr.aria-label]="'header.mainMenu' | translate"
+      data-testid="mobile-navigation"
+    >
+      @for (link of links; track link.id) {
+        <a
+          class="sidebar__link"
+          [routerLink]="link.link"
+          routerLinkActive="sidebar__link--active"
+          [routerLinkActiveOptions]="{ exact: link.link === '/' }"
+          ariaCurrentWhenActive="page"
+          [attr.data-testid]="'mobile-nav-link-' + link.id"
+          (click)="closeSidebar()"
+        >
+          {{ link.labelKey | translate }}
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+        </a>
+      }
+    </nav>
+
+    <div class="sidebar__footer">
+      <a class="sidebar__phone" [href]="phoneHref" data-testid="mobile-menu-phone">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"
+          />
+        </svg>
+        {{ phone }}
+      </a>
+      <app-language-switcher variant="inline" />
+      <a
+        class="btn btn-primary sidebar__cta"
+        routerLink="/contact"
+        data-testid="mobile-menu-contact"
+        (click)="closeSidebar()"
+      >
+        {{ 'header.getStarted' | translate }}
+      </a>
+    </div>
+  </div>
+}

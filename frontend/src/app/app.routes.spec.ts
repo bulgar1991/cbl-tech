@@ -2,6 +2,9 @@ import { TestBed } from '@angular/core/testing';
 import { Title } from '@angular/platform-browser';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
+import { firstValueFrom } from 'rxjs';
+import { LanguageService } from '@services/language.service';
+import { provideTestTranslations } from '../testing/translations';
 import { routes } from './app.routes';
 
 describe('routes', () => {
@@ -15,7 +18,7 @@ describe('routes', () => {
     } as unknown as typeof IntersectionObserver;
 
     TestBed.configureTestingModule({
-      providers: [provideRouter(routes, withComponentInputBinding())],
+      providers: [provideRouter(routes, withComponentInputBinding()), provideTestTranslations()],
     });
     harness = await RouterTestingHarness.create();
   });
@@ -86,6 +89,27 @@ describe('routes', () => {
 
     expect(section?.querySelector('h2')).toBeNull();
     expect(section?.querySelector('[data-testid="contact-form"]')).not.toBeNull();
+  });
+
+  it('should translate the page and its title when the language changes', async () => {
+    await harness.navigateByUrl('/services/web-development');
+    const page = harness.routeNativeElement as HTMLElement;
+    const title = TestBed.inject(Title);
+    expect(page.querySelector('h1')?.textContent?.trim()).toBe('Web development');
+
+    await firstValueFrom(TestBed.inject(LanguageService).use('fr'));
+    harness.detectChanges();
+    expect(page.querySelector('h1')?.textContent?.trim()).toBe('Développement web');
+    expect(page.querySelector('[data-testid="nav-link-about"]')?.textContent?.trim()).toBe(
+      'À propos',
+    );
+    expect(title.getTitle()).toBe('Développement web — CBL Tech');
+    expect(page.querySelectorAll('li.flex.items-start').length).toBe(4);
+
+    await firstValueFrom(TestBed.inject(LanguageService).use('de'));
+    harness.detectChanges();
+    expect(page.querySelector('h1')?.textContent?.trim()).toBe('Webentwicklung');
+    expect(title.getTitle()).toBe('Webentwicklung — CBL Tech');
   });
 
   it.each([

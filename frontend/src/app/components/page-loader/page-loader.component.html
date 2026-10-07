@@ -5,7 +5,7 @@
   [attr.aria-hidden]="!visible()"
   data-testid="page-loader"
 >
-  <span class="page-loader__logo text-gradient">{{ siteName }}</span>
+  <img class="page-loader__logo" [src]="logo" [alt]="siteName" width="634" height="300" />
   <span class="page-loader__spinner" aria-hidden="true"></span>
-  <span class="sr-only">Loading…</span>
+  <span class="sr-only">{{ 'loader.loading' | translate }}</span>
 </div>

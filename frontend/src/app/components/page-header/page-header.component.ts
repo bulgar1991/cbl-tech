@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 
 /**
  * Title band at the top of inner pages, with a breadcrumb back to home.
@@ -9,7 +10,7 @@ import { RouterLink } from '@angular/router';
  * `parent` adds a middle breadcrumb step, e.g. Home > Services > <service title>.
  */
 @Component({
-  imports: [RouterLink],
+  imports: [TranslatePipe, RouterLink],
   selector: 'app-page-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './page-header.component.html',

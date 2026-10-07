@@ -57,6 +57,7 @@ module.exports = {
       },
       keyframes: {
         'fade-in': { from: { opacity: '0' }, to: { opacity: '1' } },
+        'slide-in': { from: { transform: 'translateX(100%)' }, to: { transform: 'translateX(0)' } },
         'fade-up': {
           from: { opacity: '0', transform: 'translateY(32px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
@@ -87,6 +88,7 @@ module.exports = {
       },
       animation: {
         'fade-in': 'fade-in 0.4s ease',
+        'slide-in': 'slide-in 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
         'fade-up': 'fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both',
         'gradient-x': 'gradient-x 6s ease infinite',
         float: 'float 5s ease-in-out infinite',

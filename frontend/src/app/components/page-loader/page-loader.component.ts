@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslatePipe } from '@ngx-translate/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -7,7 +8,7 @@ import {
   NavigationStart,
   Router,
 } from '@angular/router';
-import { SITE_NAME } from '@/config/site';
+import { SITE_LOGO, SITE_NAME } from '@/config/site';
 
 // Keeps the loader on screen at least this long, so fast navigations don't just flicker.
 const MIN_VISIBLE_MS = 400;
@@ -17,6 +18,7 @@ const MIN_VISIBLE_MS = 400;
  * and while navigating between pages.
  */
 @Component({
+  imports: [TranslatePipe],
   selector: 'app-page-loader',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './page-loader.component.scss',
@@ -24,6 +26,7 @@ const MIN_VISIBLE_MS = 400;
 })
 export class PageLoaderComponent {
   protected readonly siteName = SITE_NAME;
+  protected readonly logo = SITE_LOGO;
   protected readonly visible = signal(true);
 
   private shownAt = Date.now();

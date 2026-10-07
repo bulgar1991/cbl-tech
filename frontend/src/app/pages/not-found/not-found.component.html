@@ -8,17 +8,17 @@
   <div class="relative z-10">
     <p class="text-gradient animate-fade-up font-display text-8xl font-bold md:text-9xl">404</p>
     <h1 class="mt-4 animate-fade-up font-display text-3xl font-bold [animation-delay:150ms]">
-      Page not found
+      {{ 'pages.notFound.title' | translate }}
     </h1>
     <p class="mt-4 animate-fade-up text-ink-muted [animation-delay:300ms]">
-      The page you're looking for doesn't exist or has moved.
+      {{ 'pages.notFound.text' | translate }}
     </p>
     <a
       class="btn btn-primary mt-10 animate-fade-up [animation-delay:450ms]"
       routerLink="/"
       appMagnetic
     >
-      Back to home
+      {{ 'pages.notFound.back' | translate }}
     </a>
   </div>
 </section>

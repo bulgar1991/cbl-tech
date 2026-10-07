@@ -1,12 +1,13 @@
 import { provideRouter } from '@angular/router';
 import { TestBed } from '@angular/core/testing';
+import { provideTestTranslations } from '../../../testing/translations';
 import { MainLayoutComponent } from './main-layout.component';
 
 describe('MainLayoutComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MainLayoutComponent],
-      providers: [provideRouter([])],
+      providers: [provideRouter([]), provideTestTranslations()],
     }).compileComponents();
   });
 

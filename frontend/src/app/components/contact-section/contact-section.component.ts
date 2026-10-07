@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { ContactFormComponent } from '@components/contact-form/contact-form.component';
 import { MagneticDirective } from '@directives/magnetic.directive';
 import { RevealDirective } from '@directives/reveal.directive';
@@ -14,7 +15,7 @@ import {
  * Used on the home page and on /contact (where the page header already has the title).
  */
 @Component({
-  imports: [ContactFormComponent, MagneticDirective, RevealDirective],
+  imports: [TranslatePipe, ContactFormComponent, MagneticDirective, RevealDirective],
   selector: 'app-contact-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './contact-section.component.scss',
