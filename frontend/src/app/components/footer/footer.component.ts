@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { MENU_ITEMS } from '@components/header/menu-items';
 import {
   CONTACT_EMAIL,
@@ -8,10 +9,10 @@ import {
   CONTACT_PHONE_HREF,
 } from '@/config/contact';
 import { SERVICES } from '@/config/services';
-import { SITE_NAME } from '@/config/site';
+import { SITE_LOGO, SITE_NAME } from '@/config/site';
 
 @Component({
-  imports: [RouterLink],
+  imports: [TranslatePipe, RouterLink],
   selector: 'app-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './footer.component.scss',
@@ -19,6 +20,7 @@ import { SITE_NAME } from '@/config/site';
 })
 export class FooterComponent {
   siteName = SITE_NAME;
+  logo = SITE_LOGO;
   year = new Date().getFullYear();
   menuItems = MENU_ITEMS;
   services = SERVICES;

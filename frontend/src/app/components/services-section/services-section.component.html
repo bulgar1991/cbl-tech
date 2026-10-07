@@ -6,9 +6,9 @@
   <div class="mx-auto max-w-6xl px-4">
     <div class="services-section__header" appReveal>
       <h2 id="services-section-title" class="services-section__title text-gradient">
-        Our Services
+        {{ 'servicesSection.title' | translate }}
       </h2>
-      <p class="services-section__intro">Everything you need to launch and grow online.</p>
+      <p class="services-section__intro">{{ 'servicesSection.intro' | translate }}</p>
     </div>
 
     <div class="services-section__grid">
@@ -22,15 +22,21 @@
             >
               <span class="services-section__icon">{{ service.icon }}</span>
               <span class="flex-1">
-                <span class="services-section__item-title">{{ service.title }}</span>
-                <span class="services-section__item-text">{{ service.summary }}</span>
+                <span class="services-section__item-title">{{
+                  service.key + '.title' | translate
+                }}</span>
+                <span class="services-section__item-text">{{
+                  service.key + '.summary' | translate
+                }}</span>
               </span>
               <span class="services-section__arrow" aria-hidden="true">→</span>
             </a>
           </li>
         }
         <li class="pt-4" appReveal [revealDelay]="services.length * 100">
-          <a class="btn btn-outline" routerLink="/services" appMagnetic>All services</a>
+          <a class="btn btn-outline" routerLink="/services" appMagnetic>{{
+            'servicesSection.all' | translate
+          }}</a>
         </li>
       </ul>
 
@@ -38,7 +44,7 @@
         <img
           class="services-section__image"
           [src]="image"
-          alt="Laptop and phone showing code and app screens"
+          [alt]="'servicesSection.imageAlt' | translate"
           width="800"
           height="800"
           loading="lazy"

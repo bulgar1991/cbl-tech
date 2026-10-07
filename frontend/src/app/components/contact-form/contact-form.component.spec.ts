@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Web3FormsService } from '@services/web3forms.service';
+import { provideTestTranslations } from '../../../testing/translations';
 import { ContactFormComponent } from './contact-form.component';
 
 describe('ContactFormComponent', () => {
@@ -10,7 +11,7 @@ describe('ContactFormComponent', () => {
     send.mockClear();
     await TestBed.configureTestingModule({
       imports: [ContactFormComponent],
-      providers: [{ provide: Web3FormsService, useValue: { send } }],
+      providers: [{ provide: Web3FormsService, useValue: { send } }, provideTestTranslations()],
     }).compileComponents();
   });
 
@@ -74,13 +75,13 @@ describe('ContactFormComponent', () => {
       expect.stringContaining('Ada Lovelace (Analytical Engines)'),
       'ada@example.com',
       [
-        ['First name', 'Ada'],
-        ['Last name', 'Lovelace'],
-        ['Company', 'Analytical Engines'],
-        ['Job title', 'CTO'],
-        ['Email', 'ada@example.com'],
-        ['Mobile phone', '+44 20 1234 5678'],
-        ['Project details', 'A new website for our engines.'],
+        ['Prénom', 'Ada'],
+        ['Nom', 'Lovelace'],
+        ["Nom de l'entreprise", 'Analytical Engines'],
+        ['Poste occupé', 'CTO'],
+        ['E-mail', 'ada@example.com'],
+        ['Téléphone portable', '+44 20 1234 5678'],
+        ['Informations sur le projet', 'A new website for our engines.'],
       ],
     );
     expect(form.status()).toBe('success');

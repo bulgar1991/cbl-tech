@@ -4,6 +4,8 @@ import { SeoService } from '@services/seo.service';
 import { SeoData } from '@models/seo.model';
 
 // Applies the route's `data.seo` (title, description, canonical link, social-media tags).
+// Translations are already loaded at this point (see the app initializer in app.config.ts), and
+// SeoService applies the tags again when the language changes.
 export const seoResolver: ResolveFn<void> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot,

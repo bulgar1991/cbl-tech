@@ -1,0 +1,232 @@
+{
+  "header": {
+    "menu": {
+      "home": "Startseite",
+      "about": "Über uns",
+      "services": "Leistungen",
+      "contact": "Kontakt"
+    },
+    "getStarted": "Loslegen",
+    "language": "Sprache",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schliessen",
+    "mainMenu": "Hauptmenü",
+    "skipToContent": "Zum Inhalt springen"
+  },
+  "loader": {
+    "loading": "Wird geladen…"
+  },
+  "home": {
+    "hero": {
+      "title": "CBL Tech",
+      "description": "Wir entwickeln schnelle, schöne und moderne digitale Produkte — mit einem Hauch Neon.",
+      "button": "Loslegen"
+    }
+  },
+  "aboutSection": {
+    "eyebrow": "Über uns",
+    "title": "Ein Team mit Leidenschaft",
+    "intro": "Wir gestalten und entwickeln digitale Produkte mit sauberer Technik und mutigem Design.",
+    "more": "Mehr über uns",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "items": {
+      "who": {
+        "title": "Wer wir sind",
+        "text": "Ein kleines Team aus Entwicklern und Designern, die schnelle, moderne Produkte lieben."
+      },
+      "mission": {
+        "title": "Unsere Mission",
+        "text": "Unternehmen online wachsen lassen — mit Websites und Apps, die schnell, klar und zuverlässig sind."
+      },
+      "how": {
+        "title": "Wie wir arbeiten",
+        "text": "Kurze Iterationen, regelmässige Demos und klare Preise — Sie wissen immer, wo das Projekt steht."
+      },
+      "tech": {
+        "title": "Unsere Technologie",
+        "text": "Angular, TypeScript und modernes Cloud-Hosting — langlebig und leicht zu warten."
+      },
+      "partnership": {
+        "title": "Partnerschaft",
+        "text": "Wir bleiben auch nach dem Launch an Ihrer Seite: Updates, Monitoring und neue Funktionen."
+      }
+    }
+  },
+  "servicesSection": {
+    "title": "Unsere Leistungen",
+    "intro": "Alles, was Sie brauchen, um online zu starten und zu wachsen.",
+    "all": "Alle Leistungen",
+    "imageAlt": "Laptop und Smartphone mit Code und App-Bildschirmen"
+  },
+  "services": {
+    "learnMore": "Mehr erfahren →",
+    "included": "Was enthalten ist",
+    "startProject": "Projekt starten",
+    "all": "Alle Leistungen",
+    "items": {
+      "web-development": {
+        "title": "Webentwicklung",
+        "summary": "Schnelle, moderne Websites und Web-Apps mit Angular.",
+        "description": "Von der Landingpage bis zur kompletten Webanwendung: Wir bauen Websites, die schnell laden, gut ranken und einfach mitwachsen.",
+        "points": [
+          "Angular Single-Page-Anwendungen",
+          "Responsives Design für jeden Bildschirm",
+          "SEO-freundliche Struktur und Metadaten",
+          "Hosting und Deployment auf Vercel"
+        ]
+      },
+      "ui-ux-design": {
+        "title": "UI- / UX-Design",
+        "summary": "Oberflächen, die gut aussehen und einfach zu bedienen sind.",
+        "description": "Wir gestalten klare, barrierefreie Oberflächen mit starker visueller Identität — vom Wireframe bis zum letzten Pixel.",
+        "points": [
+          "Wireframes und interaktive Prototypen",
+          "Designsysteme und Komponentenbibliotheken",
+          "Barrierefreiheits-Prüfungen (WCAG)",
+          "Animationen und Mikrointeraktionen"
+        ]
+      },
+      "mobile-apps": {
+        "title": "Mobile Apps",
+        "summary": "Apps für iOS und Android aus einer einzigen Codebasis.",
+        "description": "Wir machen aus Ihrer Idee eine mobile App, die offline funktioniert, Benachrichtigungen sendet und sich auf jedem Smartphone nativ anfühlt.",
+        "points": [
+          "Progressive Web Apps (PWA)",
+          "Plattformübergreifende iOS- und Android-Apps",
+          "Push-Benachrichtigungen und Offline-Modus",
+          "Veröffentlichung in den App Stores"
+        ]
+      },
+      "support-maintenance": {
+        "title": "Support & Wartung",
+        "summary": "Updates, Monitoring und Fehlerbehebung, damit Ihr Produkt läuft.",
+        "description": "Wir halten Ihre Website oder App sicher und aktuell und sind da, wenn etwas repariert werden muss.",
+        "points": [
+          "Framework- und Abhängigkeits-Updates",
+          "Verfügbarkeits- und Fehler-Monitoring",
+          "Sicherheitspatches",
+          "Kleine Änderungen und neue Funktionen"
+        ]
+      }
+    }
+  },
+  "contactSection": {
+    "title": "Kontakt",
+    "intro": "Erzählen Sie uns von Ihrem Projekt — wir antworten innerhalb eines Tages.",
+    "imageAlt": "Briefumschlag, Sprechblasen und ein Telefon",
+    "asideTitle": "Lieber persönlich sprechen?",
+    "asideText": "Rufen Sie uns an — wir besprechen Ihr Projekt gerne.",
+    "call": "Rufen Sie uns an",
+    "orWrite": "oder schreiben Sie an"
+  },
+  "contactForm": {
+    "labels": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "company": "Firmenname",
+      "jobTitle": "Position",
+      "email": "E-Mail",
+      "phone": "Mobiltelefonnummer",
+      "project": "Nützliche Informationen zum Projekt"
+    },
+    "placeholders": {
+      "firstName": "Max",
+      "lastName": "Muster",
+      "company": "Muster AG",
+      "jobTitle": "Projektleiter",
+      "email": "max@beispiel.ch",
+      "phone": "+41 79 123 45 67",
+      "project": "Ziele, Zeitplan, Budget, Links… alles, was für Ihr Projekt nützlich ist."
+    },
+    "errors": {
+      "firstName": "Bitte geben Sie Ihren Vornamen ein.",
+      "lastName": "Bitte geben Sie Ihren Nachnamen ein.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "phone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+      "project": "Bitte schreiben Sie mindestens 10 Zeichen."
+    },
+    "submit": "Senden",
+    "sending": "Wird gesendet…",
+    "error": "Etwas ist schiefgelaufen, bitte versuchen Sie es erneut.",
+    "success": {
+      "title": "Nachricht gesendet!",
+      "text": "Danke, wir melden uns bald bei Ihnen.",
+      "again": "Weitere Nachricht senden"
+    }
+  },
+  "footer": {
+    "description": "Wir entwickeln schnelle, schöne und moderne digitale Produkte — Websites, Web-Apps und mobile Apps.",
+    "cta": "Projekt starten →",
+    "quickLinks": "Schnellzugriff",
+    "services": "Leistungen",
+    "contact": "Kontakt",
+    "sendMessage": "Schreiben Sie uns",
+    "rights": "Alle Rechte vorbehalten.",
+    "backToTop": "Nach oben"
+  },
+  "pages": {
+    "home": "Startseite",
+    "breadcrumb": "Navigationspfad",
+    "about": {
+      "title": "Über uns",
+      "subtitle": "Ein kleines Team, das schnelle, moderne digitale Produkte entwickelt.",
+      "intro": "CBL Tech gestaltet und entwickelt Websites, Web-Apps und mobile Apps. Wir verbinden saubere Technik mit mutigem Design, damit Ihr Produkt schnell, zuverlässig und einprägsam ist.",
+      "valuesTitle": "Unsere Werte",
+      "values": {
+        "focused": {
+          "title": "Fokussiert",
+          "text": "Wir übernehmen nur wenige Projekte gleichzeitig und schenken jedem unsere volle Aufmerksamkeit."
+        },
+        "transparent": {
+          "title": "Transparent",
+          "text": "Klare Preise, regelmässige Updates und Code, der Ihnen gehört."
+        },
+        "detail": {
+          "title": "Detailverliebt",
+          "text": "Performance, Barrierefreiheit und Feinschliff gehören zu jedem Projekt — nicht als Extra."
+        }
+      },
+      "ctaTitle": "Haben Sie ein Projekt im Kopf?",
+      "ctaButton": "Sprechen Sie mit uns"
+    },
+    "services": {
+      "title": "Leistungen",
+      "subtitle": "Alles, was Sie brauchen, um online zu starten und zu wachsen."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "subtitle": "Erzählen Sie uns von Ihrem Projekt — wir antworten innerhalb eines Tages."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "text": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+      "back": "Zur Startseite"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "CBL Tech",
+      "description": "Wir entwickeln schnelle, schöne und moderne digitale Produkte — mit einem Hauch Neon."
+    },
+    "about": {
+      "title": "Über uns — CBL Tech",
+      "description": "Ein kleines Team, das schnelle, moderne Websites, Web-Apps und mobile Apps entwickelt."
+    },
+    "services": {
+      "title": "Leistungen — CBL Tech",
+      "description": "Webentwicklung, UI/UX-Design, mobile Apps, Support und Wartung."
+    },
+    "serviceDetail": {
+      "title": "{{service}} — CBL Tech"
+    },
+    "contact": {
+      "title": "Kontakt — CBL Tech",
+      "description": "Erzählen Sie uns von Ihrem Projekt — wir antworten innerhalb eines Tages."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden — CBL Tech",
+      "description": "Die gesuchte Seite existiert nicht oder wurde verschoben."
+    }
+  }
+}

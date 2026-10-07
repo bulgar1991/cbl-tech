@@ -2,13 +2,14 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { SERVICES } from '@/config/services';
 import { MENU_ITEMS } from '@components/header/menu-items';
+import { provideTestTranslations } from '../../../testing/translations';
 import { FooterComponent } from './footer.component';
 
 describe('FooterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FooterComponent],
-      providers: [provideRouter([])],
+      providers: [provideRouter([]), provideTestTranslations()],
     }).compileComponents();
   });
 
@@ -43,6 +44,16 @@ describe('FooterComponent', () => {
     expect(footer.querySelector('[data-testid="footer-copyright"]')?.textContent).toContain(
       String(new Date().getFullYear()),
     );
+  });
+
+  it('should show the logo linking home', () => {
+    const logo = render().querySelector('[data-testid="footer-logo"]');
+
+    expect(logo?.getAttribute('href')).toBe('/');
+    expect(logo?.querySelector('img')?.getAttribute('src')).toBe(
+      'assets/images/header/site-logo-light.svg',
+    );
+    expect(logo?.querySelector('img')?.getAttribute('alt')).toBe('CBL Tech');
   });
 
   it('should scroll back to the top', () => {

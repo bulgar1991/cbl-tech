@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Web3FormsService } from '@services/web3forms.service';
 import { MagneticDirective } from '@directives/magnetic.directive';
 import { CONTACT_EMAIL_LABELS, contactEmailSubject } from './contact-form.email';
@@ -11,7 +12,7 @@ const PHONE_PATTERN = /^\+?[\d\s().-]{6,20}$/;
 
 /** "Get in touch" form, sent to your inbox through Web3Forms. */
 @Component({
-  imports: [ReactiveFormsModule, MagneticDirective],
+  imports: [TranslatePipe, ReactiveFormsModule, MagneticDirective],
   selector: 'app-contact-form',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './contact-form.component.html',

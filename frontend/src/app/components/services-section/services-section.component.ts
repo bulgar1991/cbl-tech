@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import { MagneticDirective } from '@directives/magnetic.directive';
 import { RevealDirective } from '@directives/reveal.directive';
 import { SERVICES } from '@/config/services';
 
 /** "Our Services" section on the home page: services list on the left, image on the right. */
 @Component({
-  imports: [RouterLink, MagneticDirective, RevealDirective],
+  imports: [TranslatePipe, RouterLink, MagneticDirective, RevealDirective],
   selector: 'app-services-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './services-section.component.scss',

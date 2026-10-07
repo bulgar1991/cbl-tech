@@ -9,6 +9,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
 import Swiper from 'swiper';
 import { A11y, Navigation } from 'swiper/modules';
 import { RevealDirective } from '@directives/reveal.directive';
@@ -16,7 +17,7 @@ import { ABOUT_ITEMS } from './about-section.items';
 
 /** "About us" section on the home page: a full-width, centered, looping row of glass cards. */
 @Component({
-  imports: [RouterLink, RevealDirective],
+  imports: [TranslatePipe, RouterLink, RevealDirective],
   selector: 'app-about-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './about-section.component.scss',

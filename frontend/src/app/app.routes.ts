@@ -3,7 +3,8 @@ import { serviceExistsGuard } from './guards/service-exists.guard';
 import { seoResolver } from './resolvers/seo.resolver';
 import { serviceSeoResolver } from './resolvers/service-seo.resolver';
 
-// `data.seo` holds the page title, description and social-media tags; seoResolver applies them.
+// `data.seo` holds translation keys (under "seo" in assets/i18n/*.json); seoResolver turns them
+// into the page title, description, canonical link and social-media tags.
 const mainLayoutRoutes: Routes = [
   {
     path: '',
@@ -11,8 +12,8 @@ const mainLayoutRoutes: Routes = [
     resolve: { seo: seoResolver },
     data: {
       seo: {
-        title: 'CBL Tech',
-        description: 'We build fast, beautiful and modern digital products — with a touch of neon.',
+        title: 'seo.home.title',
+        description: 'seo.home.description',
       },
     },
   },
@@ -22,8 +23,8 @@ const mainLayoutRoutes: Routes = [
     resolve: { seo: seoResolver },
     data: {
       seo: {
-        title: 'About us — CBL Tech',
-        description: 'A small team building fast, modern websites, web apps and mobile apps.',
+        title: 'seo.about.title',
+        description: 'seo.about.description',
       },
     },
   },
@@ -34,8 +35,8 @@ const mainLayoutRoutes: Routes = [
     resolve: { seo: seoResolver },
     data: {
       seo: {
-        title: 'Services — CBL Tech',
-        description: 'Web development, UI/UX design, mobile apps, support and maintenance.',
+        title: 'seo.services.title',
+        description: 'seo.services.description',
       },
     },
   },
@@ -56,8 +57,8 @@ const mainLayoutRoutes: Routes = [
     resolve: { seo: seoResolver },
     data: {
       seo: {
-        title: 'Contact — CBL Tech',
-        description: "Tell us about your project and we'll answer within a day.",
+        title: 'seo.contact.title',
+        description: 'seo.contact.description',
       },
     },
   },
@@ -68,8 +69,8 @@ const mainLayoutRoutes: Routes = [
     resolve: { seo: seoResolver },
     data: {
       seo: {
-        title: 'Page not found — CBL Tech',
-        description: "The page you're looking for doesn't exist or has moved.",
+        title: 'seo.notFound.title',
+        description: 'seo.notFound.description',
         metaTags: [{ name: 'robots', content: 'noindex, follow' }],
       },
     },
