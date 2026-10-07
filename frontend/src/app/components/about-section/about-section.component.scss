@@ -74,15 +74,15 @@
       }
 
       .about-section__card {
-        @apply border-azure/50 shadow-[0_12px_40px_rgba(0,0,0,0.5),0_0_40px_rgba(0,127,255,0.35)];
+        @apply border-azure/50 shadow-[0_16px_40px_rgba(11,16,51,0.14),0_0_40px_rgba(0,127,255,0.25)];
       }
     }
   }
 
   // Glass card: translucent background, backdrop blur and a soft colored shadow.
   &__card {
-    @apply flex h-full flex-col rounded-2xl border border-white/10 bg-surface-light/40 p-7;
-    @apply shadow-[0_8px_32px_rgba(0,0,0,0.45),0_0_24px_rgba(42,0,255,0.25)] backdrop-blur-xl;
+    @apply flex h-full flex-col rounded-2xl border border-border bg-white/60 p-7;
+    @apply shadow-[0_8px_32px_rgba(11,16,51,0.1),0_0_24px_rgba(42,0,255,0.12)] backdrop-blur-xl;
     @apply transition-[border-color] duration-300 ease-out;
 
     &:hover {

@@ -13,8 +13,8 @@
       @for (link of links; track link.id) {
         <li>
           <a
-            class="link-underline text-ink-muted transition-colors hover:text-white"
-            routerLinkActive="!text-white"
+            class="link-underline text-ink-muted transition-colors hover:text-ink"
+            routerLinkActive="!text-ink"
             [routerLinkActiveOptions]="{ exact: link.link === '/' }"
             [routerLink]="link.link"
             [attr.data-testid]="'nav-link-' + link.id"

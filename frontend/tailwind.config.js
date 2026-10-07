@@ -28,19 +28,19 @@ module.exports = {
         purple: '#6A00FF',
         magenta: '#D400FF',
 
-        // Text colors.
-        ink: '#ffffff',
-        'ink-muted': '#b4b8d6',
-        'ink-subtle': '#6c7096',
+        // Text colors (dark navy, for the white site).
+        ink: '#0b1033',
+        'ink-muted': '#4a5078',
+        'ink-subtle': '#8489a8',
 
-        // Dark backgrounds.
-        background: '#000000',
-        surface: '#07071a',
-        'surface-light': '#0e0e2a',
-        border: '#1c1c48',
+        // Light backgrounds.
+        background: '#ffffff',
+        surface: '#f6f7ff',
+        'surface-light': '#eef0fb',
+        border: '#dde1f2',
 
-        danger: '#ff3b6b',
-        success: '#22e39b',
+        danger: '#e0244f',
+        success: '#12a86c',
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #0000FF 0%, #2A00FF 35%, #AA00FF 100%)',

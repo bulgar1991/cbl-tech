@@ -17,20 +17,20 @@
   @apply lg:hidden;
 
   span {
-    @apply block h-0.5 w-6 rounded-sm bg-white;
+    @apply block h-0.5 w-6 rounded-sm bg-ink;
   }
 }
 
 // ---- Sidebar (opened by the burger) ----
 
 .sidebar-overlay {
-  @apply fixed inset-0 z-[200] animate-fade-in bg-black/60 motion-reduce:animate-none;
+  @apply fixed inset-0 z-[200] animate-fade-in bg-ink/40 motion-reduce:animate-none;
 }
 
 // Slides in from the right (transform only).
 .sidebar {
   @apply fixed inset-y-0 right-0 z-[201] flex w-[min(320px,85vw)] animate-slide-in flex-col overflow-y-auto border-l border-border bg-surface;
-  @apply shadow-[-8px_0_40px_rgba(0,0,0,0.6),0_0_32px_rgba(42,0,255,0.25)] motion-reduce:animate-none;
+  @apply shadow-[-8px_0_40px_rgba(11,16,51,0.18),0_0_32px_rgba(42,0,255,0.12)] motion-reduce:animate-none;
 
   // Top padding keeps clear of the notch / status bar on phones.
   &__header {
@@ -46,8 +46,8 @@
   }
 
   &__close {
-    @apply flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border-none bg-white/[0.06] text-ink-muted transition-colors duration-200;
-    @apply hover:bg-azure/20 hover:text-white;
+    @apply flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border-none bg-ink/[0.05] text-ink-muted transition-colors duration-200;
+    @apply hover:bg-azure/15 hover:text-ink;
 
     svg {
       @apply h-5 w-5 fill-none stroke-current;
@@ -62,7 +62,7 @@
 
   &__link {
     @apply flex items-center justify-between border-l-[3px] border-transparent px-6 py-4 text-lg font-medium text-ink-muted no-underline transition-colors duration-200;
-    @apply hover:border-azure hover:bg-azure/10 hover:text-white;
+    @apply hover:border-azure hover:bg-azure/10 hover:text-ink;
 
     svg {
       @apply h-5 w-5 fill-none stroke-current opacity-35;
@@ -72,8 +72,8 @@
     }
 
     &--active {
-      @apply border-azure font-semibold text-white;
-      background-image: linear-gradient(90deg, rgba(0, 127, 255, 0.15), transparent);
+      @apply border-azure font-semibold text-ink;
+      background-image: linear-gradient(90deg, rgba(0, 127, 255, 0.12), transparent);
 
       svg {
         @apply text-azure opacity-100;

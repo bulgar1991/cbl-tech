@@ -1,0 +1,49 @@
+:host {
+  --bubble-1: theme('colors.azure');
+  --bubble-2: theme('colors.violet');
+  --bubble-3: theme('colors.electric');
+  --bubble-4: theme('colors.indigo');
+
+  @apply pointer-events-none fixed inset-0 -z-10 block overflow-hidden;
+}
+
+// Rises from below the screen to above it.
+.bubble {
+  position: absolute;
+  top: 0;
+  transform: translate3d(0, 110vh, 0);
+  animation: rise linear infinite;
+  will-change: transform;
+}
+
+// Glassy circle: a white highlight top-left and a colored rim. Sways left and right.
+.bubble__body {
+  display: block;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.95) 0 12%, transparent 14%),
+    radial-gradient(circle, transparent 52%, var(--color) 100%);
+  animation: sway ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes rise {
+  to {
+    transform: translate3d(0, -15vh, 0);
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: translate3d(calc(var(--sway) * -1), 0, 0);
+  }
+  to {
+    transform: translate3d(var(--sway), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :host {
+    display: none;
+  }
+}
