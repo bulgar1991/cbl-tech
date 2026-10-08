@@ -7,6 +7,7 @@ import {
   CONTACT_EMAIL_HREF,
   CONTACT_PHONE,
   CONTACT_PHONE_HREF,
+  SHOW_CONTACT_EMAIL,
 } from '@/config/contact';
 import { SERVICES } from '@/config/services';
 import { SITE_LOGO, SITE_NAME } from '@/config/site';
@@ -28,6 +29,7 @@ export class FooterComponent {
   phoneHref = CONTACT_PHONE_HREF;
   email = CONTACT_EMAIL;
   emailHref = CONTACT_EMAIL_HREF;
+  showEmail = SHOW_CONTACT_EMAIL;
 
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });

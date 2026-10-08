@@ -8,6 +8,7 @@ import {
   CONTACT_EMAIL_HREF,
   CONTACT_PHONE,
   CONTACT_PHONE_HREF,
+  SHOW_CONTACT_EMAIL,
 } from '@/config/contact';
 
 /**
@@ -31,4 +32,5 @@ export class ContactSectionComponent {
   protected readonly phoneHref = CONTACT_PHONE_HREF;
   protected readonly email = CONTACT_EMAIL;
   protected readonly emailHref = CONTACT_EMAIL_HREF;
+  protected readonly showEmail = SHOW_CONTACT_EMAIL;
 }
