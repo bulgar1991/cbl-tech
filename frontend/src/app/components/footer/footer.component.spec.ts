@@ -31,12 +31,11 @@ describe('FooterComponent', () => {
     }
   });
 
-  it('should show the phone as a tel: link, the email as a mailto: link and the current year', () => {
+  it('should show the phone as a tel: link, hide the email and show the current year', () => {
     const footer = render();
 
-    expect(footer.querySelector('[data-testid="footer-email"]')?.getAttribute('href')).toBe(
-      'mailto:codebrolab@hotmail.com',
-    );
+    // Hidden for now - see SHOW_CONTACT_EMAIL in config/contact.ts.
+    expect(footer.querySelector('[data-testid="footer-email"]')).toBeNull();
 
     expect(footer.querySelector('[data-testid="footer-phone"]')?.getAttribute('href')).toBe(
       'tel:+41783231039',

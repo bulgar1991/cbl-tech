@@ -76,6 +76,8 @@ describe('routes', () => {
     expect(section?.querySelector('h2')?.textContent?.trim()).toBe('Contact');
     expect(section?.querySelector('[data-testid="contact-form"]')).not.toBeNull();
     expect(section?.querySelector('[data-testid="contact-section-image"]')).not.toBeNull();
+    // Hidden for now - see SHOW_CONTACT_EMAIL in config/contact.ts.
+    expect(section?.querySelector('[data-testid="contact-email"]')).toBeNull();
     expect(section?.querySelector('[data-testid="contact-call"]')?.getAttribute('href')).toMatch(
       /^tel:\+?\d+$/,
     );

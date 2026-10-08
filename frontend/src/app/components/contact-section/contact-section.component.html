@@ -40,12 +40,14 @@
           </svg>
           {{ 'contactSection.call' | translate }} · {{ phone }}
         </a>
-        <p class="contact-section__email">
-          {{ 'contactSection.orWrite' | translate }}
-          <a class="link-underline text-azure" [href]="emailHref" data-testid="contact-email">{{
-            email
-          }}</a>
-        </p>
+        @if (showEmail) {
+          <p class="contact-section__email">
+            {{ 'contactSection.orWrite' | translate }}
+            <a class="link-underline text-azure" [href]="emailHref" data-testid="contact-email">{{
+              email
+            }}</a>
+          </p>
+        }
       </aside>
     </div>
   </div>
