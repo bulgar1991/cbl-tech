@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-import { OG_LOCALES, SITE_NAME, SITE_URL } from '@/config/site';
+import { OG_LOCALES, SITE_NAME, SITE_SHARE_IMAGE, SITE_URL } from '@/config/site';
 import { SeoData } from '@models/seo.model';
 import { DEFAULT_LANGUAGE } from './language.service';
 
@@ -43,29 +43,49 @@ export class SeoService {
     this.title.setTitle(title);
 
     this.meta.updateTag({ name: 'description', content: description });
-    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
+    this.meta.updateTag({ name: 'robots', content: 'index, follow, max-image-preview:large' });
 
     this.meta.updateTag({ property: 'og:type', content: seo.type ?? 'website' });
     this.meta.updateTag({ property: 'og:site_name', content: SITE_NAME });
     this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({ property: 'og:title', content: title });
     this.meta.updateTag({ property: 'og:description', content: description });
-    this.meta.updateTag({
-      property: 'og:locale',
-      content: OG_LOCALES[lang] ?? OG_LOCALES[DEFAULT_LANGUAGE],
-    });
+    const locale = OG_LOCALES[lang] ?? OG_LOCALES[DEFAULT_LANGUAGE];
+    this.meta.updateTag({ property: 'og:locale', content: locale });
+    // The other languages of the same page.
+    this.meta
+      .getTags("property='og:locale:alternate'")
+      .forEach((tag) => this.meta.removeTagElement(tag));
+    this.meta.addTags(
+      Object.values(OG_LOCALES)
+        .filter((other) => other !== locale)
+        .map((other) => ({ property: 'og:locale:alternate', content: other })),
+    );
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
     this.meta.updateTag({ name: 'twitter:title', content: title });
     this.meta.updateTag({ name: 'twitter:description', content: description });
 
+    // The route's own share image, or the site default.
+    const image = seo.image ?? SITE_SHARE_IMAGE.path;
+    const imageUrl = `${SITE_URL}/${image}`;
+    const imageAlt = this.text(SITE_SHARE_IMAGE.alt);
+    this.meta.updateTag({ property: 'og:image', content: imageUrl });
+    this.meta.updateTag({ property: 'og:image:alt', content: imageAlt });
+    this.meta.updateTag({ name: 'twitter:image', content: imageUrl });
+    this.meta.updateTag({ name: 'twitter:image:alt', content: imageAlt });
     if (seo.image) {
-      const image = `${SITE_URL}/${seo.image}`;
-      this.meta.updateTag({ property: 'og:image', content: image });
-      this.meta.updateTag({ name: 'twitter:image', content: image });
+      // Size and type are only known for the default image.
+      this.meta.removeTag("property='og:image:type'");
+      this.meta.removeTag("property='og:image:width'");
+      this.meta.removeTag("property='og:image:height'");
     } else {
-      this.meta.removeTag("property='og:image'");
-      this.meta.removeTag("name='twitter:image'");
+      this.meta.updateTag({ property: 'og:image:type', content: SITE_SHARE_IMAGE.type });
+      this.meta.updateTag({ property: 'og:image:width', content: String(SITE_SHARE_IMAGE.width) });
+      this.meta.updateTag({
+        property: 'og:image:height',
+        content: String(SITE_SHARE_IMAGE.height),
+      });
     }
 
     this.setCanonical(url);

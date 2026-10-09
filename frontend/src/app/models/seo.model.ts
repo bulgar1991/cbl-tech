@@ -14,7 +14,7 @@ export interface SeoData {
   params?: Record<string, string>;
   // og:type. Default 'website'.
   type?: 'website' | 'article';
-  // Path of the share image, e.g. 'assets/images/og-image.jpg' (1200×630).
+  // Path of the share image (1200×630). Default: SITE_SHARE_IMAGE in config/site.ts.
   image?: string;
   metaTags?: SeoMetaTag[];
 }

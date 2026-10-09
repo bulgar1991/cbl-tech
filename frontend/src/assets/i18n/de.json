@@ -206,8 +206,8 @@
   },
   "seo": {
     "home": {
-      "title": "CBL Tech",
-      "description": "Wir entwickeln schnelle, schöne und moderne digitale Produkte — mit einem Hauch Neon."
+      "title": "CBL Tech — Webentwicklung, Design und Apps",
+      "description": "Schnelle, moderne Websites, Web- und Mobile-Apps: Entwicklung, UI/UX-Design, Support und Wartung. Erzählen Sie uns von Ihrem Projekt."
     },
     "about": {
       "title": "Über uns — CBL Tech",
@@ -227,6 +227,7 @@
     "notFound": {
       "title": "Seite nicht gefunden — CBL Tech",
       "description": "Die gesuchte Seite existiert nicht oder wurde verschoben."
-    }
+    },
+    "imageAlt": "CBL Tech — moderne Websites, Apps und Design"
   }
 }
