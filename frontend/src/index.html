@@ -2,16 +2,91 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>CBL Tech</title>
+    <title>CBL Tech — Développement web, design et applications</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- Icons (generated from the logo mark, see src/assets/icons/app) -->
+    <link href="favicon.ico" rel="icon" sizes="48x48" />
+    <link href="assets/icons/app/icon.svg" rel="icon" type="image/svg+xml" />
+    <link href="assets/icons/app/icon-32.png" rel="icon" type="image/png" sizes="32x32" />
+    <link href="assets/icons/app/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="site.webmanifest" rel="manifest" />
+
+    <!-- Primary meta (fallback, overwritten by SeoService at runtime) -->
     <meta
       name="description"
-      content="Nous créons des produits numériques rapides, beaux et modernes — avec une touche de néon."
+      content="Sites web, applications web et mobiles rapides et modernes : développement, design UI/UX, support et maintenance. Parlez-nous de votre projet."
     />
-    <link href="favicon.ico" rel="icon" />
-    <link href="site.webmanifest" rel="manifest" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="CBL Tech" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CBL Tech" />
+    <meta property="og:locale" content="fr_CH" />
+    <meta property="og:locale:alternate" content="de_CH" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:title" content="CBL Tech — Développement web, design et applications" />
+    <meta
+      property="og:description"
+      content="Sites web, applications web et mobiles rapides et modernes : développement, design UI/UX, support et maintenance. Parlez-nous de votre projet."
+    />
+    <meta property="og:url" content="https://cbl-tech.com/" />
+    <meta property="og:image" content="https://cbl-tech.com/assets/images/seo/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CBL Tech — sites web, applications et design modernes" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CBL Tech — Développement web, design et applications" />
+    <meta
+      name="twitter:description"
+      content="Sites web, applications web et mobiles rapides et modernes : développement, design UI/UX, support et maintenance. Parlez-nous de votre projet."
+    />
+    <meta name="twitter:image" content="https://cbl-tech.com/assets/images/seo/og-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="CBL Tech — sites web, applications et design modernes"
+    />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://cbl-tech.com/" />
+
+    <!-- Structured data: tells search engines who runs the site and how to reach them.
+         Keep in sync with src/app/config/contact.ts and src/app/config/site.ts
+         (the email is left out while it is hidden on the site). -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://cbl-tech.com/#organization",
+            "name": "CBL Tech",
+            "url": "https://cbl-tech.com/",
+            "logo": "https://cbl-tech.com/assets/icons/app/icon-512.png",
+            "image": "https://cbl-tech.com/assets/images/seo/og-image.jpg",
+            "description": "Sites web, applications web et mobiles rapides et modernes : développement, design UI/UX, support et maintenance.",
+            "telephone": "+41783231039",
+            "areaServed": { "@type": "Country", "name": "Switzerland" },
+            "knowsLanguage": ["fr", "de", "en"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://cbl-tech.com/#website",
+            "name": "CBL Tech",
+            "url": "https://cbl-tech.com/",
+            "inLanguage": ["fr", "de", "en"],
+            "publisher": { "@id": "https://cbl-tech.com/#organization" }
+          }
+        ]
+      }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

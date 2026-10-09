@@ -1,8 +1,22 @@
 {
   "name": "CBL Tech",
   "short_name": "CBL Tech",
-  "icons": [{ "src": "favicon.ico", "sizes": "48x48", "type": "image/x-icon" }],
-  "theme_color": "#000000",
-  "background_color": "#000000",
-  "display": "standalone"
+  "description": "Sites web, applications web et mobiles rapides et modernes",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "assets/icons/app/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/app/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "assets/icons/app/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    { "src": "assets/icons/app/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
 }
